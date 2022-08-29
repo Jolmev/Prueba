@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <title> Título de Mi página </title>
+  </head>
+  <body>
+    <header>
+      <h1>Manejo de listas y tablas</h1>
+      <nav>
+        <b>Inicio</b>
+      </nav>
+    </header>
+    
+    <main>
+      <menu>
+        <li>
+          <button type="menu" value="Archivo" menu="menuarchivo">
+            <menu id="menuarchivo" type="context">
+              <menuitem label="Nuevo..." onclick="nuevo()">
+              <menuitem label="Abrir..." onclick="abrir()">
+              <menuitem label="Guardar" onclick="guardar()">
+              <menuitem label="Guardar como..." onclick="guardarcomo()">
+            </menu>
+        </li>
+        <li>
+          <button type="menu" value="Editar" menu="menueditar">
+            <menu id="menueditar" type="context">
+              <menuitem label="Copiar" onclick="copiar()">
+              <menuitem label="Cortar" onclick="cortar()">
+              <menuitem label="Pegar" onclick="pegar()">
+            </menu>
+        </li>
+        <li>
+          <button type="menu" value="Ayuda" menu="menuayuda">
+            <menu id="menuayuda" type="context">
+              <menuitem label="Contenidos de ayuda" onclick="contenidosayuda()">
+              <menuitem label="Acerca" onclick="acerca()">
+            </menu>
+        </li>
+      </menu>
+    </main>
+    
+
+  </body>
+</html>
