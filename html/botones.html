@@ -3,6 +3,27 @@
   <head>
     <meta charset="UTF-8">
     <title> Título de Mi página </title>
+    <style>
+      .button{
+        border: none;
+        color: beige;
+        padding: 15px 32px;
+        margin:4px 2px;
+        text-align: center;
+        text-decoration:none;
+        display:inline-block;
+        font-size: 16px;
+        cursor: pointer;
+      }
+
+      .button1{
+        background-color: rgb(134, 77, 187);
+      }
+
+      .button2{
+        background-color: cornflowerblue;
+      }
+    </style>
   </head>
   <body>
     <header>
@@ -16,10 +37,10 @@
 
     <main>
       <div>
-        <button name="button">Hazme click</button>
+        <button class="button button1" name="button">Hazme click</button>
         <br/>
         <br/>
-        <button type="button" onclick="alert('Hola Mundo!!!')">Hazme click</button>
+        <button class="button button2" type="button" onclick="alert('Hola Mundo!!!')">Hazme click</button>
       </div>
     </main>
     
