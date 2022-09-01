@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <title>ejemplo js</title>
+  </head>
+
+  <body>
+    <h2>ejemplos con JavaScript</h2>
+
+    <p id="demo">JavaScript oculta/muestra informacion</p>
+
+    <!-- Ocultar -->
+    <button type="button"
+            onclick="document.getElementById('demo').style.display='none'">
+          Ocultar</button>
+
+    <!-- Mostrar -->
+    <button type="button"
+            onclick="document.getElementById('demo').style.display='block'">
+          Mostrar</button>
+
+    <h2>JavaScript función</h2>
+    <p id="prueba">Lorem ipsum dolor sit amet conesosiasdsovn asodnaso sadvnsanvd sadvlsanv sodnvsdn sadnldvsn kasdvlsdnvd ksdvldsnv sadnvranvn a fvav afvfa av faf vvafvlma</p> <!--dentro de un mismo html no se puede repetir un id-->
+    <button type="button" onclick="miFuncion()">
+            Click y cambio tu parrado</button>
+
+    <script>
+      function miFuncion() {
+        document.getElementById("prueba").innerHTML = "Parrafo cambiado";
+      }
+    </script>
+    <h2>JavaScript con números</h2>
+    <p id="num"></p>
+
+    <script>
+      var x = 10;
+      var y = 60;
+      var z = x + y;
+
+      document.getElementById("num").innerHTML =z;
+    </script>
+
+    <p id="est">Hola</p>
+
+    <script>
+      document.getElementById("est").style.color="blue";
+      document.getElementById("est").style.fontFamily="Arial";
+      document.getElementById("est").style.fontSize="large";
+    </script>
+  </body>
+</html>
