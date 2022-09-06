@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="../js/ejemplohtmljs.js"></script>
+    <title>HTML/JS</title>
+  </head>
+  <body>
+    <h2>Cambiar atributo</h2>
+    <p>Vamos a cambiar al atributo de la etiqueta img a raves de se¿rc</p>
+    <button onclick="document.getElementById('miLibro').src='../img/libros.jpg'">
+      Libros
+    </button>
+    <img id = "miLibro" src = "../img/libros.jpg"
+      style = "width: 200px">
+    <button onclick="document.getElementById('miLibro').src='../img/libro_azul.jpg'">
+      Libro Azul
+    </button>
+
+    <h2>Eventos</h2>
+    <button id="saludo" onclick="this.innerHTML=Date()">
+      Click para saber la hora
+    </button>
+    <p id="saludo"></p>
+    <button onclick="hora()">Click</button>
+
+    <h2>Dia con switch</h2>
+    <p id="dia"></p>
+    <button onclick="hoyEs()">Click para saber dia</button>
+
+    <h2>Listas</h2>
+    <p id="lista"></p>
+    <script>
+      document.getElementById("lista").innerHTML = lista1();
+    </script>
+
+    <h2>Listas</h2>
+    <p id="lista1"></p>
+    <script>
+      document.getElementById("lista1").innerHTML = lista2();
+    </script>
+
+    <h2>Manejo de errores con try catch</h2>
+    <p id ="error"></p>
+    <script>
+      try{
+       mensajeAlerta("Esto podria ser un error!!"); 
+      }
+      catch(err){
+        document.getElementById("error").innerHTML = err.message;
+      }
+    </script>
+
+    <h2>JS con POO</h2>
+    <p id="clases"></p>
+    <script>
+      miProducto = new Producto("calzado", 12458);
+      document.getElementById("clases").innerHTML =
+      miProducto.nombre + " " + miProducto.codigo;
+    </script>
+
+    <h3>Metodos con JS</h3>
+    <script>
+      function Persona(primerNombre){
+        this.primerNombre = primerNombre;
+      }
+
+      Persona.prototype.diHola = function(){
+        alert('Hola, soy ' + this.primerNombre);
+      };
+
+      var persona = new Persona("Estudiante");
+      persona.diHola();
+
+      function Estudiante(primerNombre, asignatura){
+        Persona.call(this, primerNombre);
+        this.asignatura = asignatura;
+      };
+
+      Estudiante.prototype = Object.create(Persona.prototype);
+      Estudiante.prototype.constructor = Estudiante;
+
+      Estudiante.prototype.diHola=function(){
+      alert("Hola Soy " + this.primerNombre + " estoy estudiando " + this.asignatura + ".")
+      };
+      var estudiante1 = new Estudiante("Andrés", "Ciclo III");
+      estudiante1.diHola();
+      
+    </script>
+
+    <h2>Operadores de Listas</h2>
+    <p id="opLista"></p>
+    <p id="opMap"></p>
+    <script>
+
+      let tareas = [
+        {'nombre' : 'Abrir la tienda', 'tiempo': 30},
+        {'nombre' : 'Revisar inventarios', 'tiempo': 180},
+        {'nombre' : 'Pagar proveedores', 'tiempo': 90},
+        {'nombre' : 'Cerrar la tienda', 'tiempo': 40}
+      ];
+
+      let nombre_tareas = [];
+      tareas.forEach(function(tarea){
+        nombre_tareas.push(tarea.nombre)
+      }
+      );
+      document.getElementById("opLista").innerHTML = nombre_tareas;
+
+      // mapas o map
+
+      let nombre_tareas2 = tareas.map(function(tarea){
+        return tarea.nombre;
+      });
+
+      document.getElementById("opMap").innerHTML = nombre_tareas2;
+
+    </script>
+
+  </body>
+</html>
